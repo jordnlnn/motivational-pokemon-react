@@ -13,7 +13,6 @@ export default function FormInput() {
         />
         <input type="submit" class="submit-button" value="submit" />
       </form>
-      {/* HINT */}
       <div class="hint">i.e. "Pikachu" OR "Motivate me, Snorlax!"</div>
     </div>
   );

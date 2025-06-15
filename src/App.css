@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=VT323&display=swap");
+
+body {
+  font-family: "VT323", monospace;
+  color: #333333;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  min-height: 100vh;
+  background-image: url("./assets/peaceful-beach-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-heading {
+  color: #3b4cca;
+  font-weight: 800;
+  font-size: 38px;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+  text-shadow: 2px 2px 0 #ffcb05, 4px 4px 0 #ffcb05, 4px 4px 0 #ffcb05;
+}
+
+.landing-text {
+  font-size: 26px;
+  text-align: center;
+  margin-top: 55px;
+  margin-bottom: 55px;
+}
+
+button {
+  margin-left: 10px;
+  background-color: #3b4cca;
+  border: none;
+  color: #ffffff;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 22px;
+  cursor: pointer;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bolder;
+}
+
+button:hover {
+  background-color: #51b9e0;
+}
+
+.landing-screen {
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.08);
+  /*margin-bottom: 150px;*/
+}
+
+form {
+  display: flex;
+}
+
+.pokemon-input {
+  padding: 12px;
+  border: 2px solid #3b4cca;
+  width: 100%;
+  font-size: 22px;
+  border-radius: 50px;
+  line-height: 20px;
+  color: #1e1e1e;
+  font-family: inherit;
+  background-color: #f7f7f7;
+}
+
+.submit-button {
+  margin-left: 10px;
+  background-color: #3b4cca;
+  border: none;
+  color: #ffffff;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bolder;
+}
+
+.hint {
+  margin-top: 5px;
+  font-size: 16px;
+  color: #5a5a5a;
+  letter-spacing: 1px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+footer p {
+  text-align: center;
+}
+
+a {
+  color: #3b4cca;
+}

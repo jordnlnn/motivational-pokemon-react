@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer>
       <p>
-        Coded by Jordan Goldtooth and is open-sourced on
+        Coded by Jordan Goldtooth and is open-sourced on{" "}
         <a
           href="https://github.com/jordnlnn/motivational-pokemon"
           target="_blank"
