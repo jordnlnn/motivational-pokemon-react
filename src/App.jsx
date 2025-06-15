@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 export default function App() {
   return (
     <div className="container">
-      <h1>Motivational Pokemon</h1>
+      <h1>Pokemon Support Buddy</h1>
       <main>
         <FormInput />
         <div class="pokemon-and-quote-container">
