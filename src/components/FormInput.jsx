@@ -11,9 +11,9 @@ export default function FormInput() {
           class="pokemon-input"
           id="user-input"
         />
+        <div class="hint">i.e. "Pikachu" OR "Motivate me, Snorlax!"</div>
         <input type="submit" class="submit-button" value="submit" />
       </form>
-      <div class="hint">i.e. "Pikachu" OR "Motivate me, Snorlax!"</div>
     </div>
   );
 }

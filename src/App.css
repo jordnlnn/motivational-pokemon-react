@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=VT323&display=swap");
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "VT323", monospace;
   color: #333333;
@@ -18,7 +22,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .landing-heading {
@@ -31,6 +35,15 @@ body {
   text-shadow: 2px 2px 0 #ffcb05, 4px 4px 0 #ffcb05, 4px 4px 0 #ffcb05;
 }
 
+.select-screen h2 {
+  color: #3b4cca;
+  font-weight: 800;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 0 #ffcb05, 4px 4px 0 #ffcb05, 4px 4px 0 #ffcb05;
+}
+
 .landing-text {
   font-size: 26px;
   text-align: center;
@@ -38,8 +51,8 @@ body {
   margin-bottom: 55px;
 }
 
-button {
-  margin-left: 10px;
+button,
+.submit-button {
   background-color: #3b4cca;
   border: none;
   color: #ffffff;
@@ -53,20 +66,42 @@ button {
   font-weight: bolder;
 }
 
-button:hover {
+button:hover,
+.submit-button:hover {
   background-color: #51b9e0;
 }
 
-.landing-screen {
+.hint {
+  margin-bottom: 25px;
+}
+
+.landing-screen,
+.select-screen,
+.random-screen {
   padding: 30px;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.08);
-  /*margin-bottom: 150px;*/
+  margin-top: 80px;
+  max-width: 500px;
+  width: 100%;
 }
 
-form {
+.landing-screen,
+.quote-generator-form,
+.select-screen {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.landing-screen button,
+.submit-button,
+.select-screen button {
+  margin-bottom: 25px;
+  display: block;
+  width: 100%;
 }
 
 .pokemon-input {
@@ -79,21 +114,6 @@ form {
   color: #1e1e1e;
   font-family: inherit;
   background-color: #f7f7f7;
-}
-
-.submit-button {
-  margin-left: 10px;
-  background-color: #3b4cca;
-  border: none;
-  color: #ffffff;
-  padding: 15px 30px;
-  border-radius: 50px;
-  font-size: 20px;
-  cursor: pointer;
-  font-family: inherit;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-weight: bolder;
 }
 
 .hint {
