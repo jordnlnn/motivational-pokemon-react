@@ -1,4 +1,4 @@
-export default function WelcomeScreen() {
+export default function WelcomeScreen({ setScreen }) {
   return (
     <div className="welcome-screen">
       <h1 className="welcome-heading">Welcome to Pokemon Support Buddy!</h1>
@@ -9,7 +9,7 @@ export default function WelcomeScreen() {
         <br />
         Ready to meet your Pokémon friend?
       </p>
-      <button>NEXT</button>
+      <button onClick={() => setScreen("trainer")}>NEXT</button>
     </div>
   );
 }

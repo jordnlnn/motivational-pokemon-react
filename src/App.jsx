@@ -1,18 +1,18 @@
 import { useState } from "react";
 import WelcomeScreen from "./components/WelcomeScreen";
-import SelectBuddy from "./components/SelectBuddy";
 
 import Footer from "./components/Footer";
 import "./App.css";
+import TrainerNameScreen from "./components/TrainerNameScreen";
 
 export default function App() {
-  const [screen, setScreen] = useState("landing");
+  const [screen, setScreen] = useState("welcome");
 
   return (
     <div className="container">
-      {screen === "landing" && <WelcomeScreen setScreen={setScreen} />}
+      {screen === "welcome" && <WelcomeScreen setScreen={setScreen} />}
 
-      {screen === "select" && <SelectBuddy setScreen={setScreen} />}
+      {screen === "trainer" && <TrainerNameScreen setScreen={setScreen} />}
 
       {screen === "random" && (
         <div className="random-screen">
