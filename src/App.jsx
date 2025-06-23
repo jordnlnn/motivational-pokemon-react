@@ -1,5 +1,5 @@
 import { useState } from "react";
-import LandingScreen from "./components/LandingScreen";
+import WelcomeScreen from "./components/WelcomeScreen";
 import SelectBuddy from "./components/SelectBuddy";
 
 import Footer from "./components/Footer";
@@ -10,7 +10,7 @@ export default function App() {
 
   return (
     <div className="container">
-      {screen === "landing" && <LandingScreen setScreen={setScreen} />}
+      {screen === "landing" && <WelcomeScreen setScreen={setScreen} />}
 
       {screen === "select" && <SelectBuddy setScreen={setScreen} />}
 
