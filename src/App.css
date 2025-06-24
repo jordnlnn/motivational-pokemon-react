@@ -35,7 +35,8 @@ body {
   text-shadow: 2px 2px 0 #ffcb05, 4px 4px 0 #ffcb05, 4px 4px 0 #ffcb05;
 }
 
-.welcome-text {
+.welcome-text,
+.mood-text {
   font-size: 16px;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -53,21 +54,24 @@ body {
 }
 
 /*TRAINER SCREEN*/
-#trainer-form {
+#trainer-form,
+#mood-form {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 100%;
 }
+.mood-text {
+  margin-bottom: 25px;
+}
 
-.select-screen h2 {
-  color: #3b4cca;
-  font-weight: 800;
-  font-size: 28px;
-  font-weight: bold;
-  text-align: center;
-  text-shadow: 2px 2px 0 #ffcb05, 4px 4px 0 #ffcb05, 4px 4px 0 #ffcb05;
+.mood-options {
+  margin-top: 0px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 button,
@@ -91,7 +95,8 @@ button:hover,
 }
 
 .welcome-screen,
-.trainer-screen {
+.trainer-screen,
+.mood-screen {
   padding: 30px;
   background-color: rgba(244, 244, 244, 0.8);
   border-radius: 30px;
@@ -99,18 +104,12 @@ button:hover,
   margin-top: 80px;
   max-width: 800px;
   width: 100%;
-}
-
-.welcome-screen,
-.quote-generator-form,
-.trainer-screen {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-.welcome-screen button,
 .next-button {
   display: block;
   width: 100%;
@@ -149,5 +148,22 @@ footer p {
 }
 
 a {
+  color: #ffffff;
+}
+
+.mood-btn {
+  padding: 1em 2em;
+  color: #3b4cca;
+  border-radius: 50px;
+  background: white;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 0.5em;
+  transition: 0.3s;
+}
+
+.mood-btn.selected {
+  border-color: #3b4cca;
+  background: #51b9e0;
   color: #ffffff;
 }
