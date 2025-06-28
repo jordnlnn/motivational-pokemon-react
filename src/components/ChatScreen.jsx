@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 export default function ChatScreen({ pokemonName, trainerName, mood }) {
   const [userInput, setUserInput] = useState("");
   const [pokemonImage, setPokemonImage] = useState("");
-  const [chatCount, setChatCount] = useState(0);
   const [response, setResponse] = useState("");
-  const [ended, setEnded] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (pokemonName) {
@@ -16,34 +16,25 @@ export default function ChatScreen({ pokemonName, trainerName, mood }) {
           setPokemonImage(res.data.sprites.front_default);
         });
 
-      // First motivational message
-      const initialMsg = `${trainerName}, I heard you're feeling ${mood}. I'm here for you! What's on your mind?`;
-      setResponse(initialMsg);
+      const welcomeMsg = `${trainerName}, I heard you're feeling ${mood}. I'm here for you! What's on your mind?`;
+      setResponse(welcomeMsg);
     }
   }, [pokemonName, trainerName, mood]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (ended) return;
-
-    if (chatCount === 3) {
-      setResponse(
-        `You're doing great, ${trainerName}. Just one more thing on your mind?`
-      );
-    } else if (chatCount === 4) {
-      setResponse(
-        `Thanks for chatting with me today, ${trainerName}! Remember, you're stronger than you think. 🌟`
-      );
-      setEnded(true);
-    } else {
-      setResponse(`Thanks for sharing, ${trainerName}. Tell me more.`);
+    try {
+      const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
+      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+      const prompt = `You're ${pokemonName}, a kind and encouraging Pokémon. Your trainer ${trainerName} is feeling ${mood}. Reply warmly and positively to this: "${userInput}". Keep responses 3-4 sentences long.`;
+      const result = await model.generateContent(prompt);
+      const text = result.response.text();
+      setResponse(text);
+    } catch (e) {
+      setError(e.message);
     }
-
-    setChatCount((prev) => prev + 1);
-    setUserInput("");
   };
-
   return (
     <>
       <div className="chat-screen">
@@ -55,19 +46,13 @@ export default function ChatScreen({ pokemonName, trainerName, mood }) {
             className="chat-input"
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
-            disabled={ended}
           />
-          <input
-            type="submit"
-            value={ended ? "Done" : "SEND"}
-            className="send-btn"
-            disabled={ended}
-          />
+          <input type="submit" className="send-btn" />
         </form>
       </div>
 
       <div className="quote-bubble">
-        <p>{response}</p>
+        <p>{error ? <p>{error}</p> : <p>{response}</p>}</p>
       </div>
 
       {pokemonImage && (
