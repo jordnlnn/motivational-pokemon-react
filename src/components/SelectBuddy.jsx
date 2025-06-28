@@ -44,7 +44,7 @@ export default function SelectBuddy({ setScreen, setPokemonName }) {
   return (
     <div className="select-screen">
       <p className="select-text">Choose your buddy:</p>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} id="select-form">
         <div className="autocomplete">
           <input
             type="text"
@@ -76,7 +76,7 @@ export default function SelectBuddy({ setScreen, setPokemonName }) {
             const randomIndex = Math.floor(Math.random() * pokemonList.length);
             const randomPokemon = pokemonList[randomIndex];
             setPokemonName(randomPokemon);
-            setScreen("nextScreen");
+            setScreen("chat");
           }}
         >
           Let Fate Decide

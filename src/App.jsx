@@ -30,6 +30,14 @@ export default function App() {
         <SelectBuddy setScreen={setScreen} setPokemonName={setPokemonName} />
       )}
 
+      {screen === "chat" && (
+        <ChatScreen
+          pokemonName={pokemonName}
+          trainerName={trainerName}
+          setScreen={setScreen}
+        />
+      )}
+
       <Footer />
     </div>
   );

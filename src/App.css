@@ -56,7 +56,8 @@ body {
 
 /*TRAINER SCREEN*/
 #trainer-form,
-#mood-form {
+#mood-form,
+#select-form {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -115,6 +116,12 @@ button:hover,
 .next-button {
   display: block;
   width: 100%;
+}
+.autocomplete {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .pokemon-input,
@@ -199,6 +206,7 @@ a {
 .fate-btn {
   background-color: #51b9e0;
   margin-top: 25px;
+  width: 100%;
 }
 
 .fate-btn:hover {
