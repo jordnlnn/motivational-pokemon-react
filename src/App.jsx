@@ -30,14 +30,6 @@ export default function App() {
         <SelectBuddy setScreen={setScreen} setPokemonName={setPokemonName} />
       )}
 
-      {screen === "random" && (
-        <div className="random-screen">
-          <h2>Random Pokémon support incoming!</h2>
-          {/* Code to fetch & show random Pokémon will go here */}
-          <button onClick={() => setScreen("landing")}>Back</button>
-        </div>
-      )}
-
       <Footer />
     </div>
   );
