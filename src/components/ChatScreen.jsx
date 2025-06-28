@@ -47,17 +47,23 @@ export default function ChatScreen({ pokemonName, trainerName, mood }) {
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
           />
-          <input type="submit" className="send-btn" />
+          <input type="submit" value="send" className="send-btn" />
         </form>
       </div>
 
-      <div className="quote-bubble">
-        <p>{error ? <p>{error}</p> : <p>{response}</p>}</p>
-      </div>
+      <div className="pokemon-container">
+        <div className="quote-bubble">
+          <p>{error ? <p>{error}</p> : <p>{response}</p>}</p>
+        </div>
 
-      {pokemonImage && (
-        <img src={pokemonImage} alt={pokemonName} className="pokemon-sprite" />
-      )}
+        {pokemonImage && (
+          <img
+            src={pokemonImage}
+            alt={pokemonName}
+            className="pokemon-sprite"
+          />
+        )}
+      </div>
     </>
   );
 }
