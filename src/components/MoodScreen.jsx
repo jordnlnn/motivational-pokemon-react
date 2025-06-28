@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function MoodScreen({ trainerName, setScreen }) {
+export default function MoodScreen({ trainerName, setScreen, setMood }) {
   const [selectedMood, setSelectedMood] = useState("");
   const moods = [
     { label: "Happy", value: "happy" },
@@ -14,8 +14,9 @@ export default function MoodScreen({ trainerName, setScreen }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (selectedMood) {
+      setMood(selectedMood); // ✅ pass the mood back to App
       console.log(`${trainerName} is feeling ${selectedMood}`);
-      setScreen("select");
+      setScreen("select"); // proceed to Pokémon selection
     } else {
       alert("Please select a mood.");
     }

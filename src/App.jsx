@@ -5,11 +5,13 @@ import "./App.css";
 import TrainerNameScreen from "./components/TrainerNameScreen";
 import MoodScreen from "./components/MoodScreen";
 import SelectBuddy from "./components/SelectBuddy";
+import ChatScreen from "./components/ChatScreen";
 
 export default function App() {
   const [screen, setScreen] = useState("welcome");
   const [trainerName, setTrainerName] = useState("");
   const [pokemonName, setPokemonName] = useState("");
+  const [mood, setMood] = useState("");
 
   return (
     <div className="container">
@@ -23,7 +25,11 @@ export default function App() {
       )}
 
       {screen === "mood" && (
-        <MoodScreen setScreen={setScreen} trainerName={trainerName} />
+        <MoodScreen
+          setScreen={setScreen}
+          trainerName={trainerName}
+          setMood={setMood}
+        />
       )}
 
       {screen === "select" && (
@@ -32,9 +38,9 @@ export default function App() {
 
       {screen === "chat" && (
         <ChatScreen
-          pokemonName={pokemonName}
           trainerName={trainerName}
-          setScreen={setScreen}
+          pokemonName={pokemonName}
+          mood={mood}
         />
       )}
 

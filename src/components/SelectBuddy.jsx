@@ -35,7 +35,7 @@ export default function SelectBuddy({ setScreen, setPokemonName }) {
     e.preventDefault();
     if (pokemonList.includes(inputName)) {
       setPokemonName(inputName);
-      setScreen("nextScreen");
+      setScreen("chat");
     } else {
       alert("Pokémon not found. Please try again.");
     }
