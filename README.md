@@ -29,6 +29,14 @@ A friendly, interactive web app that turns your favorite Pokémon into a persona
 
 ---
 
+## Future Improvements
+
+- Mobile Responsiveness: Implement responsive breakpoints, flexible layouts, and touch-friendly chat UI—coming soon!
+
+- Persisted Chat History: Save sessions to localStorage or a backend so you can pick up where you left off.
+
+---
+
 ## Process
 
 1. **Inspiration & Challenge**  
