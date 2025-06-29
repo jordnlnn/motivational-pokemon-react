@@ -43,7 +43,7 @@ export default function SelectBuddy({ setScreen, setPokemonName }) {
 
   return (
     <div className="select-screen">
-      <p className="select-text">Choose your buddy:</p>
+      <h2 className="select-heading">Choose your buddy:</h2>
       <form onSubmit={handleSubmit} id="select-form">
         <div className="autocomplete">
           <input

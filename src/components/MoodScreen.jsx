@@ -14,9 +14,8 @@ export default function MoodScreen({ trainerName, setScreen, setMood }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (selectedMood) {
-      setMood(selectedMood); // ✅ pass the mood back to App
-      console.log(`${trainerName} is feeling ${selectedMood}`);
-      setScreen("select"); // proceed to Pokémon selection
+      setMood(selectedMood);
+      setScreen("select");
     } else {
       alert("Please select a mood.");
     }
@@ -24,7 +23,9 @@ export default function MoodScreen({ trainerName, setScreen, setMood }) {
 
   return (
     <div className="mood-screen">
-      <p className="mood-text">{trainerName}, how are you feeling today?</p>
+      <h2 className="mood-heading">
+        {trainerName}, how are you feeling today?
+      </h2>
       <form id="mood-form" onSubmit={handleSubmit}>
         <div className="mood-options">
           {moods.map((mood) => (

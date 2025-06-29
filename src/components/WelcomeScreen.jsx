@@ -9,7 +9,9 @@ export default function WelcomeScreen({ setScreen }) {
         <br />
         Ready to meet your Pokémon friend?
       </p>
-      <button onClick={() => setScreen("trainer")}>NEXT</button>
+      <button className="next-button" onClick={() => setScreen("trainer")}>
+        NEXT
+      </button>
     </div>
   );
 }

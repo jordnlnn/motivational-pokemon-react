@@ -16,7 +16,7 @@ export default function TrainerNameScreen({ setScreen, setTrainerName }) {
 
   return (
     <div className="trainer-screen">
-      <p className="trainer-text">What's your name, Trainer?</p>
+      <h2 className="trainer-heading">What's your name, Trainer?</h2>
       <form id="trainer-form" onSubmit={handleSubmit}>
         <input
           type="text"
