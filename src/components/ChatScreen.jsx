@@ -16,7 +16,9 @@ export default function ChatScreen({ pokemonName, trainerName, mood }) {
 
     // fetch sprite
     axios
-      .get(`https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`)
+      .get(
+        `https://corsproxy.io/?https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`
+      )
       .then((res) => setPokemonImage(res.data.sprites.front_default))
       .catch(() => setError("Couldn't load Pokémon image."));
 
